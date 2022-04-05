@@ -5,10 +5,12 @@ import numpy as np
 
 from sklearn import metrics
 import matplotlib.pyplot as plt
-import seaborn as sns
+# import seaborn as sns
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
+
+import pickle
 
 html_temp = '''
     <div style = "background-color: rgba(25,25,112,0.06); padding-bottom: 30px; padding-top: 20px; padding-left: 5px; padding-right: 5px">
@@ -50,13 +52,17 @@ st.markdown(html_temp, unsafe_allow_html=True)
 opt = st.selectbox("Which Model do you want for Activity Classification?\n", ('Please Select', 'Logistic Regressor', 'Decision Tree Classifier'))
 
 if opt == 'Logistic Regressor':
-  logistic_regressor = LogisticRegression()
-  '''logistic_regressor.fit(X, y)'''
+  #logistic_regressor = LogisticRegression()
+
+  logistic_regressor = pickle.load(open('models/logistic_regressor.pkl','rb'))
+
   if st.button('Predict'):
     st.info('Predicted Activity: $ {:.3f}'.format(logistic_regressor.predict(input)[0]))
 
 elif opt == 'Decision Tree Classifier':
-  dtc_classifier = DecisionTreeClassifier(random_state=8)
-  '''dtc_classifier.fit(X, y)'''
+  #dtc_classifier = DecisionTreeClassifier(random_state=8)
+  
+  dtc_classifier = pickle.load(open('models/decision_tree_classifier.pkl','rb'))
+  
   if st.button('Predict'):
     st.info('Predicted Activity: $ {:.3f}'.format(dtc_classifier.predict(input)[0]))
