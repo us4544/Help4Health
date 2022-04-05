@@ -12,6 +12,28 @@ from sklearn.tree import DecisionTreeClassifier
 
 import pickle
 
+
+activityIDdict = {0: 'Transient',
+              1: 'Lying',
+              2: 'Sitting',
+              3: 'Standing',
+              4: 'Walking',
+              5: 'Running',
+              6: 'Cycling',
+              7: 'Nordic_walking',
+              9: 'Watching_TV',
+              10: 'Computer_work',
+              11: 'Car driving',
+              12: 'Ascending_stairs',
+              13: 'Descending_stairs',
+              16: 'Vacuum_cleaning',
+              17: 'Ironing',
+              18: 'Folding_laundry',
+              19: 'House_cleaning',
+              20: 'Playing_soccer',
+              24: 'Rope_jumping' }
+              
+
 html_temp = '''
     <div style = "background-color: rgba(25,25,112,0.06); padding-bottom: 30px; padding-top: 20px; padding-left: 5px; padding-right: 5px">
     <center><h1>Activity Prediction of the Elderly</h1></center>
@@ -57,7 +79,9 @@ if opt == 'Logistic Regressor':
   logistic_regressor = pickle.load(open('models/logistic_regressor.pkl','rb'))
 
   if st.button('Predict'):
-    st.info('Predicted Activity: $ {:.3f}'.format(logistic_regressor.predict(input)[0]))
+    activityid = logistic_regressor.predict(input)[0]
+    activity = activityIDdict[activityid]
+    st.write('Predicted Activity: ', activity)
 
 elif opt == 'Decision Tree Classifier':
   #dtc_classifier = DecisionTreeClassifier(random_state=8)
@@ -65,4 +89,6 @@ elif opt == 'Decision Tree Classifier':
   dtc_classifier = pickle.load(open('models/decision_tree_classifier.pkl','rb'))
   
   if st.button('Predict'):
-    st.info('Predicted Activity: $ {:.3f}'.format(dtc_classifier.predict(input)[0]))
+    activityid = dtc_classifier.predict(input)[0]
+    activity = activityIDdict[activityid]
+    st.write('Predicted Activity: ', activity)
