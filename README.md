@@ -9,3 +9,24 @@ These people will need help and fortunately with the development of machine lear
 
 The paper introduces a fall detector based on a neural network and a multi-agent architecture for requesting emergency services. It presented a multi-agent system for the care of elderly people living at home on their own, with the aim to prolong their independence. The system is composed of seven groups of agents providing a reliable, robust and flexible monitoring by sensing the user in the environment, reconstructing the position and posture to create the physical awareness of the user in the environment, reacting to critical situations, calling for help in the case of an emergency, and issuing warnings if unusual behavior is detected.
 
+## Installation and Quick Start
+
+- Setting up the Python Environment with dependencies:
+
+        pip install -r requirements.txt
+
+- Cloning the Repository: 
+
+        git clone https://github.com/us4544/AI_Project 
+- Entering the directory: 
+
+        cd AI_Project
+- Running the file:
+
+        pip install virtualenv
+        python -m venv env
+        source env/bin/activate
+        pip install -r requirements.txt
+        streamlit run main.py
+        
+<hr>
