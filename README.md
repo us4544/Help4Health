@@ -51,3 +51,12 @@ The system requirements are met via a multi-agent architecture. Each system modu
         streamlit run main.py
         
 <hr>
+
+## Web Application Results
+
+* Logistic Regressor Prediction
+![AI-SS-2](https://user-images.githubusercontent.com/66861243/162610467-063271b1-33f5-44e6-9030-ad63d33ffab1.png)
+
+* Decision Tree Classifier Prediction
+![AI-SS-1](https://user-images.githubusercontent.com/66861243/162610487-3a0e949b-1418-4649-8cce-1f5227a852da.png)
+
