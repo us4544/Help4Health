@@ -64,3 +64,7 @@ The system requirements are met via a multi-agent architecture. Each system modu
 ![H4H demo](https://user-images.githubusercontent.com/66861243/162613112-b8da899b-d4b7-4a58-b861-660feaba347c.gif)
 
 
+## Contributors
+- [Indira Dutta](https://github.com/indiradutta)
+- [Umang Shringi](https://github.com/us4544)
+- [Srijarko Roy](https://github.com/srijarkoroy)
